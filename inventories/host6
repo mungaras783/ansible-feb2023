@@ -1,0 +1,14 @@
+[centosgroup]
+centos1
+centos2
+centos3
+centosserver[0:30].oracle.com
+sys1
+sys2
+
+[ubuntugroup]
+ubuntu1
+ubuntu2
+ubuntu3
+sys2
+sys4

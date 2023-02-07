@@ -1,0 +1,32 @@
+---
+
+control :
+  hosts :
+    localhost :
+      ansible-connection : local
+
+centos :
+  hosts :
+    centos1 :
+      ansible_port : 2222
+    centos2 :
+    centos3 :
+  vars :
+    ansible_user : root
+
+
+ubuntu :
+  hosts :
+    ubuntu1 :
+    ubuntu2 :
+    ubuntu3 :
+  vars :
+    ansible_become : true
+
+linux :
+  children : 
+    centos :
+    ubuntu :
+
+
+...

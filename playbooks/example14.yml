@@ -1,0 +1,14 @@
+---
+-
+  hosts : ubuntugroup
+  user : ansible
+  gather_facts : false 
+
+  tasks : 
+    - name : Configure a motd 
+      copy : 
+        src : ubuntu_motd
+        dest : /tmp/motd
+
+...
+

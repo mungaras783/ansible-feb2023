@@ -1,0 +1,13 @@
+[centosgroup]
+centos1
+centos2
+centos3 ansible_user=root
+192.168.0.201
+192.168.0.202
+
+
+[ubuntugroup]
+ubuntu1
+ubuntu2 ansible_become=true ansible_become_pass=password
+ubuntu3
+

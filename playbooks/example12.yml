@@ -1,0 +1,15 @@
+---
+-
+  name : A simple Play 
+  hosts : centos1
+  user : ansible
+  become : yes
+  become_method : sudo
+  become_user : root 
+
+  tasks :
+    - name : first task 
+      service : name=httpd enabled=true
+    - name : second task 
+      service : name=sshd enabled=true
+...

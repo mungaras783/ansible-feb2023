@@ -1,0 +1,25 @@
+[control]
+localhost ansible-connection=localhost
+
+[centosgroup]
+centos1
+centos2
+centos3
+
+[ubuntugroup]
+ubuntu1
+ubuntu2
+ubuntu3
+
+
+[ubuntugroup:vars]
+ansible_become=true
+ansible_become_pass=password
+
+[centosgroup:vars]
+ansible_connection=ssh
+
+[all:vars]
+ansible_port=22
+
+
