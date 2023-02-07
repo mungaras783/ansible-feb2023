@@ -1,0 +1,12 @@
+---
+- 
+  hosts : centos1
+
+  tasks :
+    - name : When Example task1
+      command : hostname -s
+      when : (ansible_distribution == "CentOS"  and ansible_distribution_major_version == "8") or 
+             (ansible_distribution == "Ubuntu"  and ansible_distribution_major_version == "20")
+
+...
+      

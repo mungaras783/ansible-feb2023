@@ -1,0 +1,18 @@
+---
+- 
+  hosts : centos1
+
+  tasks :
+    - name : Register variable - generate and store data
+      command : hostname -a
+      register : hostname_output
+
+    - name : show hostname 
+      debug : 
+        var : hostname_output 
+
+    - name : show hostname stdout data 
+      debug :
+        var : hostname_output.stdout
+...
+
