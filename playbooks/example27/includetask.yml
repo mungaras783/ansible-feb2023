@@ -1,0 +1,11 @@
+---
+-
+  hosts : centos1
+  tasks :
+    - name : Play1 - task 1
+      debug : 
+        msg : Play1 - task 1
+
+    - include : play1_task2.yml
+
+...
