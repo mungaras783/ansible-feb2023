@@ -1,0 +1,24 @@
+---
+- 
+  hosts : centos1
+
+  tasks :
+    - name : When Example task1
+      command : hostname -s
+      when : 
+        - ansible_distribution == "CentOS"
+        - ansible_distribution_major_version | int >= 5
+      register : command_register 
+
+    - name : Show Register 
+      debug : 
+        var : command_register
+
+    - name : Configure a file 
+      copy : 
+        content : "{{ command_register }}"
+        dest : /tmp/output.txt
+
+
+...
+      

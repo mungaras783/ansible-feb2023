@@ -1,0 +1,20 @@
+---
+-
+  hosts : all
+
+  tasks :
+    - name : Configure a Motd
+      copy :
+        content : "welcome to {{ item }} Linux - \n"
+        dest : /tmp/motd
+      notify : MOTD Changed
+      with_items : ['CentOS', 'Ubuntu']
+      when : ansible_distribution == item
+
+  handlers :
+    - name : MOTD Changed
+      debug : 
+        msg : The Motd has been changed
+...
+
+

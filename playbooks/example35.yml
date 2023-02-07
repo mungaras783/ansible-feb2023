@@ -1,0 +1,38 @@
+---
+- 
+  hosts : centos1
+  become : yes
+  become_user : root
+
+
+  tasks :
+    - name : When Example task1
+      command : hostname -s
+      when : 
+        - ansible_distribution == "CentOS"
+        - ansible_distribution_major_version | int >= 5
+      register : command_register 
+
+    - name : Show Register 
+      debug : 
+        var : command_register
+
+    - name : Show command is changed 
+      debug :
+        var : command_regiter.changed 
+
+    - name : Intall patch when changed 
+      yum :
+        name : patch 
+        state : present 
+      when : command_register is changed 
+
+    - name : Intall patch when skipped 
+      yum :
+        name : patch 
+        state : present 
+      when : command_register is skipped 
+
+
+...
+      
