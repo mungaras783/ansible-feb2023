@@ -1,0 +1,19 @@
+---
+-
+  hosts : centos1 
+  gather_facts : true 
+
+  tasks :
+    - name : Test Host Variables 
+      debug : 
+        msg : "{{ hostvars[ansible_hostname] }}"
+
+    - name : Test Host Variables 
+      debug : 
+        msg : "{{ hostvars[ansible_hostname].ansible_userspace_architecture }}"
+
+    - name : Test Host Variables in dict style
+      debug : 
+        msg : "{{ hostvars[ansible_hostname]['ansible_user_shell'] }}"
+
+...

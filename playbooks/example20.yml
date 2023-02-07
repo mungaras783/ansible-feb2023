@@ -1,0 +1,71 @@
+---
+
+- 
+  hosts : centos1
+
+  vars_files :
+    - example20_vars.yml
+
+  
+  tasks :
+    - name : Test normal dictionary  value 
+      debug :
+        msg : result is {{ example_key }}
+
+    - name : Test Dictionary value 
+      debug :
+        msg : result is {{ dict }}
+
+    - name : Test Dictionary value with dot notation 
+      debug :
+        msg : result is {{ dict.dict_key }}
+
+    - name : Test Dictionary value with python notation 
+      debug :
+        msg : result is {{ dict['dict_key'] }}
+
+
+
+    - name : Test Inline Dictionary value 
+      debug :
+        msg : result is {{ inline_dict }}
+
+    - name : Test Inline Dictionary value with dot notation 
+      debug :
+        msg : result is {{ inline_dict.dict_key1 }}
+
+    - name : Test Inline Dictionary value with python notation 
+      debug :
+        msg : result is {{ inline_dict['dict_key2'] }}
+
+
+    
+    - name : Test Named List value 
+      debug :
+        msg : result is {{ named_list }}
+
+    - name : Test Named List with dot notation 
+      debug :
+        msg : result is {{ named_list.3 }}
+
+    - name : Test Named List value with python notation 
+      debug :
+        msg : result is {{ named_list[4] }}
+
+    
+    
+    - name : Test Inline Named List value 
+      debug :
+        msg : result is {{ inline_named_list }}
+
+    - name : Test Inline Named List with dot notation 
+      debug :
+        msg : result is {{ inline_named_list.2 }}
+
+    - name : Test Inline Named List value with python notation 
+      debug :
+        msg : result is {{ inline_named_list[3] }}
+
+
+    
+...

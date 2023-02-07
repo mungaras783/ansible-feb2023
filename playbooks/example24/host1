@@ -1,0 +1,10 @@
+[centosgroup]
+centos1 ansible_become_pass=password
+centos2
+centos3
+
+[ubuntugroup]
+ubuntu1
+ubuntu2
+ubuntu3
+

@@ -1,0 +1,26 @@
+---
+-
+  hosts : centos1
+
+  vars :
+    dict :
+      dict_key : dictionary value 
+
+  tasks : 
+    - name : Test Dictionary value 
+      debug :
+        msg : result is {{ dict }}
+
+    - name : Test Dictionary value with dot notation 
+      debug :
+        msg : result is {{ dict.dict_key }}
+
+    - name : Test Dictionary value with python notation 
+      debug :
+        msg : result is {{ dict['dict_key'] }}
+
+...
+
+
+
+        

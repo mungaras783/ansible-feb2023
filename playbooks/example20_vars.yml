@@ -1,0 +1,24 @@
+---
+
+example_key : example value
+
+dict :
+  dict_key : dictionary value 
+
+inline_dict :
+  { dict_key1 : dictionary value1 , dict_key2 : dictionary value 2 }
+
+
+named_list :
+  - item1
+  - item2
+  - item3
+  - item4
+  - item5
+  - item6
+
+inline_named_list :
+  [ex1, ex2, ex3, ex4, ex5]
+  
+
+...
